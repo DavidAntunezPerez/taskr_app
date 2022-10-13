@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { People } from 'src/app/models/people.model';
 import { PeopleService } from 'src/app/services/people.service';
-import { PeoplelistComponent } from 'src/app/components/peoplelist/peoplelist.component';
 
 
 @Component({
