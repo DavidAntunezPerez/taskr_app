@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { People } from '../../models/people.model'
 
 @Component({
   selector: 'app-peoplelist',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./peoplelist.component.scss'],
 })
 export class PeoplelistComponent implements OnInit {
+
+  @Input() ppl : People;
 
   constructor() { }
 

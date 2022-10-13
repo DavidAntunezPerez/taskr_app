@@ -25,9 +25,5 @@
     </ion-col>
   </ion-row>
   <!-- TABLE CONTENT -->
-  <ion-row style="border-bottom: groove;" class="ion-margin" *ngFor="let person of getPerson()">
-    <ion-col col-4>
-      <ion-label >row</ion-label>
-    </ion-col>
-  </ion-row>
+  <app-peoplelist *ngFor="let ppl of getPerson()"></app-peoplelist>
 </ion-content>
