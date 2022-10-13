@@ -4,10 +4,6 @@ import { People} from '../models/people.model';
   providedIn: 'root',
 })
 export class PeopleService {
-  name: String;
-  surname: String;
-  sex?: String;
-  picture: String; // not yet showed
   constructor() {}
   person:People[] = [
     {
@@ -37,4 +33,11 @@ export class PeopleService {
       picture:"",
     }
   ]
+  public getPersons(): People[]{ // return person
+    return this.person;
+  }
+  
+  public getPersonsById(id:number): People{ // returns person by ID
+    return this.person[id];
+  }
 }
