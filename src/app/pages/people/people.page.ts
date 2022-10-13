@@ -9,12 +9,13 @@ import { PeopleService } from 'src/app/services/people.service';
   styleUrls: ['./people.page.scss'],
 })
 export class PeoplePage implements OnInit {
-
-  constructor() { }
+  public person:People[];
+  constructor(private personinfo:PeopleService) {  }
 
   ngOnInit() {
   }
 
-  
-
+  getPerson(){
+    return this.personinfo.getPerson();
+  }
 }
