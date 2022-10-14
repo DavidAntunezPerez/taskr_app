@@ -4,7 +4,6 @@ import { People } from '../models/people.model';
   providedIn: 'root',
 })
 export class PeopleService {
-  constructor() {}
   person: People[] = [
     {
       id: 0,
@@ -35,13 +34,21 @@ export class PeopleService {
       phone: '622119833',
     },
   ];
+
+  constructor() {}
+
   public getPerson(): People[] {
     // return person
     return this.person;
   }
 
-  public getPersonsById(id: number): People {
+  public getPersonsById(id: number) {
     // returns person by ID
-    return this.person[id];
+    return this.person.find((ppl) => ppl.id == id);
+  }
+
+  deletePersonById(id: number) {
+    // delete person by ID
+    this.person = this.person.filter((ppl) => ppl.id != id);
   }
 }

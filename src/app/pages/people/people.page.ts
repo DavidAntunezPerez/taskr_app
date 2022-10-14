@@ -10,6 +10,7 @@ import { PeopleService } from 'src/app/services/people.service';
 })
 export class PeoplePage implements OnInit {
   public person:People[];
+  private peopleService:PeopleService;
   constructor(private personinfo:PeopleService) {  }
 
   ngOnInit() {
@@ -17,5 +18,9 @@ export class PeoplePage implements OnInit {
 
   getPerson(){
     return this.personinfo.getPerson();
+  }
+
+  onDeletePerson(person){
+    this.peopleService.deletePersonById(person.id);
   }
 }

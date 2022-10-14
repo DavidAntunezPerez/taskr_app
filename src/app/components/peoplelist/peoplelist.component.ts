@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , Output , EventEmitter} from '@angular/core';
 import { People } from '../../models/people.model'
 
 @Component({
@@ -9,9 +9,14 @@ import { People } from '../../models/people.model'
 export class PeoplelistComponent implements OnInit {
 
   @Input() ppl : People;
+  @Output() onDelete = new EventEmitter;
 
   constructor() { }
 
   ngOnInit() {}
+
+  onDeleteClick(){
+    this.onDelete.emit(this.ppl);
+  }
 
 }
