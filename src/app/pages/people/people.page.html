@@ -9,21 +9,9 @@
 </ion-header>
 
 <ion-content>
-  <!-- TABLE HEADERS -->
-  <ion-row style="border-bottom: groove;" class="ion-margin">
-    <ion-col col-4>
-      <ion-label >ID</ion-label>
-    </ion-col>
-    <ion-col col-4>
-      <ion-label >Name</ion-label>
-    </ion-col>
-    <ion-col col-4>
-      <ion-label >Surname</ion-label>
-    </ion-col>
-    <ion-col col-4>
-      <ion-label >Sex</ion-label>
-    </ion-col>
-  </ion-row>
-  <!-- TABLE CONTENT -->
+  <!-- PEOPLE LIST CONTENT -->
   <app-peoplelist *ngFor="let ppl of getPerson()" [ppl]="ppl"></app-peoplelist>
 </ion-content>
+
+<!-- BUTTON RIGHT BOTTOM TO ADD -->
+<ion-button (click)="onNewPerson()" slot="start" icon-only color="tertiary"><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>

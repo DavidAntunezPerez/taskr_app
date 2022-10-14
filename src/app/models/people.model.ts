@@ -3,5 +3,6 @@ export interface People{
   name: String;
   surname: String;
   sex?: String; // optional
-  picture: String; // not yet showed
+  picture?: String; // not yet showed
+  phone?: String; //phone number
 }

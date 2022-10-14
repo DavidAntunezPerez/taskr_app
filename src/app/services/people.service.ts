@@ -11,6 +11,7 @@ export class PeopleService {
       name: 'Paquito',
       surname: 'Potentus',
       picture: '',
+      phone: '611122336',
     },
     {
       id: 1,
@@ -31,6 +32,7 @@ export class PeopleService {
       name: 'Juanjo',
       surname: 'Jimenez',
       picture: '',
+      phone: '622119833',
     },
   ];
   public getPerson(): People[] {
