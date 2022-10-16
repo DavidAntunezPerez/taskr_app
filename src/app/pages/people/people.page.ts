@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { People } from 'src/app/models/people.model';
 import { PeopleService } from 'src/app/services/people.service';
-
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-people',
@@ -9,9 +9,8 @@ import { PeopleService } from 'src/app/services/people.service';
   styleUrls: ['./people.page.scss'],
 })
 export class PeoplePage implements OnInit {
-  public person:People[];
-  private peopleService:PeopleService;
-  constructor(private personinfo:PeopleService) {  }
+  constructor(private personinfo:PeopleService,
+    private modal:ModalController) { }
 
   ngOnInit() {
   }
@@ -20,7 +19,28 @@ export class PeoplePage implements OnInit {
     return this.personinfo.getPerson();
   }
 
-  onDeletePerson(person){
-    this.peopleService.deletePersonById(person.id);
+  async presentPersonForm(person:People){
+    const modal = await this.modal.create({
+      component:PersonDetailComponent,// add detail comp
+      componentProps:{
+        person:person
+      }
+    });
+    modal.present();
+    modal.onDidDismiss().then(result=>{
+
+    });
+  }
+
+  onNewPerson(){ // create person function
+    this.presentPersonForm(null);  
+  }
+
+  onEditPerson(person){ // edit person function
+    this.presentPersonForm(person);
+  }
+
+  onDeletePerson(person){ // delete person function
+    this.personinfo.deletePersonById(person.id);
   }
 }
