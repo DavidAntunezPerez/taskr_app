@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { People } from '../../models/people.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { People } from '../../models/people.model';
   styleUrls: ['./peopledetail.component.scss'],
 })
 
-export class PeopleDetailComponent implements OnInit {
+export class PeopledetailComponent implements OnInit {
   
   pplid:number;
   form:FormGroup; // CREATE FORM
