@@ -10,7 +10,7 @@
 
 <ion-content>
   <!-- PEOPLE LIST CONTENT -->
-  <app-peoplelist *ngFor="let ppl of getPerson()" [ppl]="ppl" (onDelete)="onDeletePerson($event)"></app-peoplelist>
+  <app-peoplelist *ngFor="let ppl of getPerson()" [ppl]="ppl" (onDelete)="onDeletePerson($event)" (onEdit)="onEditPerson($event)"></app-peoplelist>
 </ion-content>
 
 <!-- BUTTON RIGHT BOTTOM TO ADD -->

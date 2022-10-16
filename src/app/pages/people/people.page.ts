@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { People } from 'src/app/models/people.model';
 import { PeopleService } from 'src/app/services/people.service';
 import { ModalController } from '@ionic/angular';
+import { PeopleDetailComponent } from 'src/app/components/peopledetail/peopledetail.component';
+
 
 @Component({
   selector: 'app-people',
@@ -21,7 +23,7 @@ export class PeoplePage implements OnInit {
 
   async presentPersonForm(person:People){
     const modal = await this.modal.create({
-      component:PersonDetailComponent,// add detail comp
+      component:PeopleDetailComponent,// add detail comp
       componentProps:{
         person:person
       }
