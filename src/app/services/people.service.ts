@@ -34,6 +34,7 @@ export class PeopleService {
       phone: '622119833',
     },
   ];
+  id:number = this.person.length + 1;
 
   constructor() {}
 
@@ -50,5 +51,22 @@ export class PeopleService {
   deletePersonById(id: number) {
     // delete person by ID
     this.person = this.person.filter((ppl) => ppl.id != id);
+  }
+
+  addPerson(ppl:People){
+    ppl.id = this.id++;
+    this.person.push(ppl);
+  }
+
+  updatePerson(ppl:People){
+    var person = this.person.find(p=>p.id==ppl.id);
+    if(ppl){
+      person.name = ppl.name;
+      person.surname = ppl.surname;
+      person.sex = ppl.sex;
+      person.phone = ppl.phone;
+      person.picture = ppl.picture;
+    }
+    
   }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input , Output , EventEmitter} from '@angular/core';
 import { People } from '../../models/people.model'
-// import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
   selector: 'app-peoplelist',

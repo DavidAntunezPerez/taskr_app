@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { People } from 'src/app/models/people.model';
 import { PeopleService } from 'src/app/services/people.service';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { PeopledetailComponent } from 'src/app/components/peopledetail/peopledetail.component';
 
 
@@ -12,7 +12,9 @@ import { PeopledetailComponent } from 'src/app/components/peopledetail/peopledet
 })
 export class PeoplePage implements OnInit {
   constructor(private personinfo:PeopleService,
-    private modal:ModalController) { }
+    private modal:ModalController,
+    private alert:AlertController
+    ) { }
 
   ngOnInit() {
   }
@@ -30,7 +32,17 @@ export class PeoplePage implements OnInit {
     });
     modal.present();
     modal.onDidDismiss().then(result=>{
-
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.personinfo.addPerson(result.data.person);
+            break;
+          case 'Edit':
+            this.personinfo.updatePerson(result.data.person);
+            break;
+          default:
+        }
+      }
     });
   }
 
