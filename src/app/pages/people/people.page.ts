@@ -54,7 +54,33 @@ export class PeoplePage implements OnInit {
     this.presentPersonForm(person);
   }
 
+  async onDeleteAlert(person){
+    const alert = await this.alert.create({
+      header: 'Do you want to delete this person?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log("Operation cancelled");
+          },
+        },
+        {
+          text: 'Delete',
+          role: 'confirm',
+          handler: () => {
+            this.personinfo.deletePersonById(person.id);
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
   onDeletePerson(person){ // delete person function
-    this.personinfo.deletePersonById(person.id);
+    this.onDeleteAlert(person);
   }
 }
