@@ -1,0 +1,9 @@
+<ion-item>
+  <ion-avatar>
+    <img *ngIf="!tsk.picture" alt="Default person picture" src="../../../assets/images/user-96.png"/>
+    <img *ngIf="tsk.picture" alt="Custom person picture" [src]="tsk.picture" />
+  </ion-avatar>
+  <ion-label>{{tsk.name}} <br><ion-text color="medium">{{tsk.description}}</ion-text></ion-label>
+  <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="ellipsis-horizontal-circle-outline" ></ion-icon></ion-button>
+  <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-circle-outline" ></ion-icon></ion-button>
+</ion-item>
