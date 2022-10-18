@@ -14,6 +14,7 @@ export class PeopledetailComponent implements OnInit {
 
   @Input('person') set person(ppl: People) {
     if (ppl) {
+      this.form.controls.id.setValue(ppl.id);
       this.form.controls.name.setValue(ppl.name);
       this.form.controls.surname.setValue(ppl.surname);
       this.form.controls.sex.setValue(ppl.sex);
@@ -25,6 +26,7 @@ export class PeopledetailComponent implements OnInit {
 
   constructor(private formBld: FormBuilder, private modal: ModalController) {
     this.form = this.formBld.group({
+      id:[null],
       name: ['', [Validators.required]],
       surname: ['', [Validators.required]],
       sex: [''],
