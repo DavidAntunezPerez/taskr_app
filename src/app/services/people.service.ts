@@ -17,7 +17,7 @@ export class PeopleService {
       name: 'Pepe',
       surname: 'Pérez',
       sex: 'Male',
-      picture: '',
+      picture: 'https://cdn-icons-png.flaticon.com/512/206/206854.png',
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export class PeopleService {
       id: 3,
       name: 'Juanjo',
       surname: 'Jimenez',
-      picture: '',
+      picture: 'https://cdn-icons-png.flaticon.com/512/3770/3770431.png',
       phone: '622119833',
     },
   ];
