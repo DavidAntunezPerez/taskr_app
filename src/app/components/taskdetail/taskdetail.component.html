@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Task Data</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce the task name" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Description
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce a short description (optional)" formControlName="description">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Picture
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce the task picture URL (optional)" formControlName="picture">
+      </ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modify":"Add"}}</ion-button>
+  </form>
+</ion-content>
