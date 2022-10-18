@@ -9,10 +9,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { PeopledetailComponent } from './components/peopledetail/peopledetail.component';
-import { TasklistComponent } from './components/tasklist/tasklist.component';
 import { TaskdetailComponent } from './components/taskdetail/taskdetail.component';
 @NgModule({
-  declarations: [AppComponent,PeopledetailComponent,TasklistComponent,TaskdetailComponent],
+  declarations: [AppComponent,PeopledetailComponent,TaskdetailComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule,FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

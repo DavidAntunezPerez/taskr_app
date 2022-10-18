@@ -1,12 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Manage Tasks</ion-title>
+    <ion-title>Tasks</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
-
+  <!-- TASK LIST CONTENT -->
+  <app-tasklist *ngFor="let tsk of getTask()" [tsk]="tsk" (onDelete)="onDeleteTask($event)" (onEdit)="onEditTask($event)"></app-tasklist>
 </ion-content>
+
+<!-- BUTTON RIGHT BOTTOM TO ADD -->
+<ion-button (click)="onNewTask()" slot="start" icon-only color="tertiary">
+  <ion-icon style="zoom:2" name="add-outline"></ion-icon>
+</ion-button>
