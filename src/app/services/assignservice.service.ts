@@ -11,8 +11,8 @@ export class AssignService {
   private assgn: Assignment[] = [
     {
       id: 1,
-      idPerson: 1,
-      idTask: 1,
+      idPerson: 0,
+      idTask: 0,
       dateCreation: this.momentjs().toISOString(),
       dateTime: this.momentjs().add(1, 'days').toISOString(),
     },

@@ -1,0 +1,18 @@
+ion-avatar {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  margin-right: 10px;
+}
+
+
+#date{
+  display: block;
+}
+
+// IN CASE OF PHONE VIEW, DATE WILL NOT BE SHOWN BECAUSE OF THE LACK OF SPACE
+@media only screen and (max-width: 600px) {
+  #date{
+    display: none;
+  }
+}

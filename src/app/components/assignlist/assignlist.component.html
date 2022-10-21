@@ -8,17 +8,10 @@
     <img *ngIf="!getPerson()?.picture" alt="Silhouette of a person's head" src="../../../assets/images/user-96.png" />
     <img *ngIf="getPerson()?.picture" alt="Person picture" [src]="getPerson().picture" />
   </ion-avatar>
-  <ion-label class="ion-text-center ion-text-wrap">{{assignment.dateTime | date:'short'}}</ion-label>
-  <ion-button class="item-expanded" slot="end" fill="clear" (click)="onEditClick()">
-    <div class="vertical">
-      <ion-icon style="zoom:2" name="ellipsis-horizontal-circle-outline"></ion-icon>
-    </div>
-  </ion-button>
-  <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
-    <div class="vertical">
-      <ion-icon style="zoom:2" name="trash-outline"></ion-icon>
-    </div>
-  </ion-button>
+  <ion-label id="date" class="ion-text-center ion-text-wrap">{{assignment.dateTime | date:'short'}}</ion-label>
+  <!-- BUTTONS -->
+  <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="ellipsis-horizontal-circle-outline" ></ion-icon></ion-button>
+  <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-circle-outline" ></ion-icon></ion-button>
 </ion-item>
 
 <ion-item-options>
