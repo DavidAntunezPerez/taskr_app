@@ -5,7 +5,7 @@ import { Assignment } from '../models/assign.model';
 @Injectable({
   providedIn: 'root',
 })
-export class AssignserviceService {
+export class AssignService {
   momentjs: any = moment;
 
   private assgn: Assignment[] = [
