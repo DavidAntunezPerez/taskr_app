@@ -1,4 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Assign Tasks</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
 <ion-list>
   <app-assignlist *ngFor="let assignment of getAssignments()" [assignment]="assignment" (onEdit)="onEditAssignment($event)" (onDelete)="onDeleteAssignment($event)"></app-assignlist>
 </ion-list>
-
+</ion-content>

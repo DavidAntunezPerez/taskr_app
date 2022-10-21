@@ -5,7 +5,6 @@ import { Task } from '../../models/tasks.model';
 import { AssignService } from '../../services/assignservice.service';
 import { PeopleService } from '../../services/people.service';
 import { TasksService } from '../../services/tasks.service';
-import { IonItemSliding } from '@ionic/angular';
 
 @Component({
   selector: 'app-assignlist',
@@ -39,13 +38,11 @@ export class AssignlistComponent implements OnInit {
     return undefined;
   }
 
-  onEditClick(slide:IonItemSliding){
-    slide.close();
+  onEditClick(){
     this.onEdit.emit(this.assignment);
   }
 
-  onDeleteClick(slide:IonItemSliding){
-    slide.close();
+  onDeleteClick(){
     this.onDelete.emit(this.assignment);
   }
 }

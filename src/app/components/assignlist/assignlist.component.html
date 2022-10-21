@@ -1,37 +1,33 @@
-<ion-item-sliding #sliding>
-  <ion-item>
-    <ion-avatar class="task">
-      <img *ngIf="!getTask()?.picture" alt="Silhouette of a Landscape" src="src/assets/images/landscape-100.png" />
-      <img *ngIf="getTask()?.picture" alt="Custom picture" [src]="getTask().picture" />
-    </ion-avatar>
-    <ion-icon name="link-outline"></ion-icon>
-    <ion-avatar class="person">
-      <img *ngIf="!getPerson()?.picture" alt="Silhouette of a person's head" src="src/assets/images/user-96.png" />
-      <img *ngIf="getPerson()?.picture" alt="Person picture" [src]="getPerson().picture" />
-    </ion-avatar>
-    <ion-label class="ion-text-center ion-text-wrap">{{assignment.dateTime | date:'short'}}</ion-label>
-    <ion-button class="item-expanded" slot="end" fill="clear" (click)="onEditClick(sliding)">
-      <div class="vertical">
-        <ion-icon name="create" ></ion-icon>
-        {{'Edit' | uppercase}}
-      </div>
-    </ion-button>
-    <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="onDeleteClick(sliding)">
-      <div class="vertical">
-        <ion-icon name="trash" ></ion-icon>
-        {{'Delete' | uppercase}}
-      </div>
-    </ion-button>
-  </ion-item>
+<ion-item>
+  <ion-avatar class="task">
+    <img *ngIf="!getTask()?.picture" alt="Silhouette of a Landscape" src="../../../assets/images/landscape-100.png" />
+    <img *ngIf="getTask()?.picture" alt="Custom picture" [src]="getTask().picture" />
+  </ion-avatar>
+  <ion-icon name="link-outline"></ion-icon>
+  <ion-avatar class="person">
+    <img *ngIf="!getPerson()?.picture" alt="Silhouette of a person's head" src="../../../assets/images/user-96.png" />
+    <img *ngIf="getPerson()?.picture" alt="Person picture" [src]="getPerson().picture" />
+  </ion-avatar>
+  <ion-label class="ion-text-center ion-text-wrap">{{assignment.dateTime | date:'short'}}</ion-label>
+  <ion-button class="item-expanded" slot="end" fill="clear" (click)="onEditClick()">
+    <div class="vertical">
+      <ion-icon style="zoom:2" name="ellipsis-horizontal-circle-outline"></ion-icon>
+    </div>
+  </ion-button>
+  <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
+    <div class="vertical">
+      <ion-icon style="zoom:2" name="trash-outline"></ion-icon>
+    </div>
+  </ion-button>
+</ion-item>
 
-  <ion-item-options>
-    <ion-item-option (click)="onEditClick(sliding)">
-      <ion-icon slot="top" name="create" ></ion-icon>
-      {{'Edit' | uppercase}}
-    </ion-item-option>
-    <ion-item-option (click)="onDeleteClick(sliding)" color="danger">
-      <ion-icon slot="top" name="trash" ></ion-icon>
-      {{'Delete' | uppercase}}
-    </ion-item-option>
-  </ion-item-options>
-</ion-item-sliding>
+<ion-item-options>
+  <ion-item-option (click)="onEditClick()">
+    <ion-icon slot="top" name="create"></ion-icon>
+    {{'Edit' | uppercase}}
+  </ion-item-option>
+  <ion-item-option (click)="onDeleteClick()" color="danger">
+    <ion-icon slot="top" name="trash"></ion-icon>
+    {{'Delete' | uppercase}}
+  </ion-item-option>
+</ion-item-options>
