@@ -3,6 +3,7 @@ import { People } from 'src/app/models/people.model';
 import { PeopleService } from 'src/app/services/people.service';
 import { ModalController, AlertController } from '@ionic/angular';
 import { PeopledetailComponent } from 'src/app/components/peopledetail/peopledetail.component';
+import { AssignService } from '../../services/assignservice.service';
 
 @Component({
   selector: 'app-people',
@@ -13,7 +14,8 @@ export class PeoplePage implements OnInit {
   constructor(
     private personinfo: PeopleService,
     private modal: ModalController,
-    private alert: AlertController
+    private alert: AlertController,
+    private assgnSvc:AssignService
   ) {}
 
   ngOnInit() {}
@@ -81,8 +83,31 @@ export class PeoplePage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
+  async onPersonExistsAlert(task){
+    const alert = await this.alert.create({
+      header: 'Error',
+      message: 'Cannot delete this person because its assigned to a task.',
+      buttons: [
+        {
+          text: 'Close',
+          role: 'close',
+          handler: () => {
+           
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
   onDeletePerson(person) {
     // delete person function
-    this.onDeleteAlert(person);
+    if(!this.assgnSvc.getAssignmentsByPersonId(person.id).length)
+     this.onDeleteAlert(person);
+    else
+      this.onPersonExistsAlert(person);
   }
 }
