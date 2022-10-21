@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AssigntasksPageRoutingModule } from './assigntasks-routing.module';
 
 import { AssigntasksPage } from './assigntasks.page';
+import { AssignlistComponent } from 'src/app/components/assignlist/assignlist.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { AssigntasksPage } from './assigntasks.page';
     IonicModule,
     AssigntasksPageRoutingModule
   ],
-  declarations: [AssigntasksPage]
+  declarations: [AssigntasksPage, AssignlistComponent]
 })
 export class AssigntasksPageModule {}
