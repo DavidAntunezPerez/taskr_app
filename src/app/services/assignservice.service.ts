@@ -57,12 +57,12 @@ export class AssignserviceService {
   }
 
   updateAssignment(assignment: Assignment) {
-    var _assignment = this.assgn.find((a) => a.id == assignment.id);
-    if (_assignment) {
-      _assignment.idTask = assignment.idTask;
-      _assignment.idPerson = assignment.idPerson;
-      _assignment.dateCreation = assignment.dateCreation;
-      _assignment.dateTime = assignment.dateTime;
+    var assign = this.assgn.find((a) => a.id == assignment.id);
+    if (assign) {
+      assign.idTask = assignment.idTask;
+      assign.idPerson = assignment.idPerson;
+      assign.dateCreation = assignment.dateCreation;
+      assign.dateTime = assignment.dateTime;
     }
   }
 }
