@@ -1,4 +1,4 @@
 <ion-list>
-  <app-assignment *ngFor="let assignment of getAssignments()" [assignment]="assignment" (onEdit)="onEditAssignment($event)" (onDelete)="onDeleteAssignment($event)"></app-assignment>
+  <app-assignlist *ngFor="let assignment of getAssignments()" [assignment]="assignment" (onEdit)="onEditAssignment($event)" (onDelete)="onDeleteAssignment($event)"></app-assignlist>
 </ion-list>
 
