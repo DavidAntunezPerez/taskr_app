@@ -16,7 +16,7 @@ export const USER_PROFILE_VALUE_ACCESSOR: any = {
   styleUrls: ['./peopleshowlst.component.scss'],
   providers:[USER_PROFILE_VALUE_ACCESSOR]
 })
-export class PeopleshowlstComponent implements OnInit {
+export class PeopleshowlstComponent implements OnInit, ControlValueAccessor {
 
   selectedPerson:People=null;
   propagateChange = (_: any) => { }

@@ -11,8 +11,9 @@ import { CommonModule } from '@angular/common';
 import { PeopledetailComponent } from './components/peopledetail/peopledetail.component';
 import { TaskdetailComponent } from './components/taskdetail/taskdetail.component';
 import { AssigndetailComponent } from './components/assigndetail/assigndetail.component';
+import { PeopleshowlstComponent } from './components/peopleshowlst/peopleshowlst.component';
 @NgModule({
-  declarations: [AppComponent,PeopledetailComponent,TaskdetailComponent, AssigndetailComponent],
+  declarations: [AppComponent,PeopledetailComponent,TaskdetailComponent, AssigndetailComponent,PeopleshowlstComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule,FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

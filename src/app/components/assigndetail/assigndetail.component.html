@@ -10,11 +10,11 @@
   
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-datetime-button datetime="datetime"></ion-datetime-button>
-
+    <app-peopleshowlst></app-peopleshowlst>
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
-        <ion-datetime doneText="Aceptar"
-        cancelText="Cancelar" 
+        <ion-datetime doneText="Accept"
+        cancelText="Cancel" 
         showDefaultButtons="true" preferWheel="true" id="datetime" name="dateTime"></ion-datetime>
       </ng-template>
     </ion-modal>
