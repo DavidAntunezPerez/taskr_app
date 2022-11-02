@@ -9,13 +9,12 @@
 <ion-content class="ion-padding">
   
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <app-peopleshowlst formControlName="idPerson"></app-peopleshowlst>
     <ion-datetime-button datetime="datetime"></ion-datetime-button>
-    <app-peopleshowlst></app-peopleshowlst>
+
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
-        <ion-datetime doneText="Accept"
-        cancelText="Cancel" 
-        showDefaultButtons="true" preferWheel="true" id="datetime" name="dateTime"></ion-datetime>
+        <ion-datetime id="datetime"></ion-datetime>
       </ng-template>
     </ion-modal>
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modify":"Add"}}</ion-button>

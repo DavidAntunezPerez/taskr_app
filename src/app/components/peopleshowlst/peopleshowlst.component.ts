@@ -23,12 +23,12 @@ export class PeopleshowlstComponent implements OnInit, ControlValueAccessor {
   isDisabled:boolean = false;
 
   constructor(
-    private peopleSvc:PeopleService
+    private pplSvc:PeopleService
   ) { }
 
 
   writeValue(obj: any): void {
-    this.selectedPerson = this.peopleSvc.getPersonsById(obj);
+    this.selectedPerson = this.pplSvc.getPersonsById(obj);
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
@@ -43,7 +43,7 @@ export class PeopleshowlstComponent implements OnInit, ControlValueAccessor {
   ngOnInit() {}
 
   getPeople(){
-    return this.peopleSvc.getPerson();
+    return this.pplSvc.getPerson();
   } 
 
   onPersonClicked(person:People, accordion:IonAccordionGroup){

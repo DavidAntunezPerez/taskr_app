@@ -9,34 +9,47 @@ import { Assignment } from '../../models/assign.model';
   styleUrls: ['./assigndetail.component.scss'],
 })
 export class AssigndetailComponent implements OnInit {
-  form: FormGroup;
-  mode: 'New' | 'Edit' = 'New';
-  @Input('assignment') set assignment(assignment: Assignment) {
-    if (assignment) {
+  
+  form:FormGroup;
+  mode:"New" | "Edit" = "New";
+  @Input('assignment') set assignment(assignment:Assignment){
+    if(assignment){
       this.form.controls.id.setValue(assignment.id);
-      this.form.controls.taskId.setValue(assignment.idTask);
-      this.form.controls.personId.setValue(assignment.idPerson);
+      this.form.controls.idTask.setValue(assignment.idTask);
+      this.form.controls.idPerson.setValue(assignment.idPerson);
       this.form.controls.dateTime.setValue(assignment.dateTime);
-      this.mode = 'Edit';
+      this.mode = "Edit";
     }
   }
+  
 
-  constructor(private fb: FormBuilder, private modal: ModalController) {
+  
+  constructor(
+    private fb:FormBuilder,
+    private modal:ModalController
+  ) { 
     this.form = this.fb.group({
-      id: [null],
-      idTask: [-1, [Validators.min(1)]],
-      idPerson: [-1, [Validators.min(1)]],
-      dateTime: ['', [Validators.required]],
+      id:[null],
+      idTask:[-1, [Validators.min(1)]],
+      idPerson:[-1, [Validators.min(1)]],
+      dateTime:['', [Validators.required]],
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
 
-  onSubmit() {
-    this.modal.dismiss({ assignment: this.form.value, mode: this.mode }, 'ok');
   }
 
-  onDismiss() {
+  onSubmit(){
+    
+    this.modal.dismiss({assignment: this.form.value, mode:this.mode}, 'ok');
+  }
+
+  onDismiss(){
     this.modal.dismiss(null, 'cancel');
+  }
+
+  onChangeDateTime(dateTime){
+    this.form.controls.dateTime.setValue(dateTime);
   }
 }
