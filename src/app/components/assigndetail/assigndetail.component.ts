@@ -30,8 +30,8 @@ export class AssigndetailComponent implements OnInit {
   ) { 
     this.form = this.fb.group({
       id:[null],
-      idTask:[-1, [Validators.min(1)]],
-      idPerson:[-1, [Validators.min(1)]],
+      idTask:[-1, [Validators.min(0)]],
+      idPerson:[-1, [Validators.min(0)]],
       dateTime:['', [Validators.required]],
     });
   }
