@@ -32,7 +32,6 @@ export class AssignlistComponent implements OnInit {
   }
 
   getPerson():People{
-    console.log(new Date().toISOString());
     var personId = this.assignment.idPerson;
     if(personId)
       return this.peopleSvc.getPersonsById(personId);
