@@ -35,19 +35,19 @@ export class AssignService {
   }
 
   getAssignmentById(id: number) {
-    return this.assgn.find((a) => a.id == id);
+    return this.assgn.find(a=>a.id==id);
   }
 
-  getAssignmentsByTaskId(taskId: number): Assignment[] {
-    return this.assgn.filter((a) => a.idTask == taskId);
+  getAssignmentsByTaskId(idTask: number): Assignment[] {
+    return this.assgn.filter(a=>a.idTask == idTask);
   }
 
   getAssignmentsByPersonId(idPerson: number): Assignment[] {
-    return this.assgn.filter((a) => a.idPerson == idPerson);
+    return this.assgn.filter(a=>a.idPerson == idPerson);
   }
 
   deleteAssignmentById(id: number) {
-    this.assgn = this.assgn.filter((a) => a.id != id);
+    this.assgn = this.assgn.filter(a=>a.id != id);
   }
 
   addAssignment(assgn: Assignment) {
@@ -56,7 +56,7 @@ export class AssignService {
   }
 
   updateAssignment(assignment: Assignment) {
-    var assign = this.assgn.find((a) => a.id == assignment.id);
+    var assign = this.assgn.find(a=>a.id==assignment.id);
     if (assign) {
       assign.idTask = assignment.idTask;
       assign.idPerson = assignment.idPerson;

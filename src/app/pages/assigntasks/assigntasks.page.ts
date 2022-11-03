@@ -26,9 +26,8 @@ export class AssigntasksPage implements OnInit {
     const modal = await this.modal.create({
       component: AssigndetailComponent,
       componentProps: {
-        person: assignment,
+        assignment:assignment
       },
-      cssClass: 'modal-full-right-side',
     });
     modal.present();
     modal.onDidDismiss().then((result) => {
@@ -58,7 +57,7 @@ export class AssigntasksPage implements OnInit {
           text: 'Cancel',
           role: 'cancel',
           handler: () => {
-            console.log('Operacion cancelada');
+            console.log('Operation cancelled');
           },
         },
         {
