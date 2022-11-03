@@ -41,7 +41,6 @@ export class AssigndetailComponent implements OnInit {
   }
 
   onSubmit(){
-    
     this.modal.dismiss({assignment: this.form.value, mode:this.mode}, 'ok');
   }
 

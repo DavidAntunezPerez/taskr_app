@@ -6,22 +6,21 @@ import { Assignment } from '../models/assign.model';
   providedIn: 'root',
 })
 export class AssignService {
-  momentjs: any = moment;
 
   private assgn: Assignment[] = [
     {
       id: 1,
       idPerson: 0,
       idTask: 0,
-      dateCreation: this.momentjs().toISOString(),
-      dateTime: this.momentjs().add(1, 'days').toISOString(),
+      dateCreation:moment().toISOString(),
+      dateTime:moment().add(1, 'days').toLocaleString(),
     },
     {
       id: 2,
-      idPerson: 2,
+      idPerson: 1,
       idTask: 2,
-      dateCreation: this.momentjs().toISOString(),
-      dateTime: this.momentjs().add(1, 'days').toISOString(),
+      dateCreation: moment().toISOString(),
+      dateTime:moment().add(1, 'days').toLocaleString(),
     },
   ];
 
