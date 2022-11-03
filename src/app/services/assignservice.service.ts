@@ -9,14 +9,14 @@ export class AssignService {
 
   private assgn: Assignment[] = [
     {
-      id: 1,
+      id: 0,
       idPerson: 0,
       idTask: 0,
       dateCreation:moment().toISOString(),
       dateTime:moment().add(1, 'days').toLocaleString(),
     },
     {
-      id: 2,
+      id: 1,
       idPerson: 1,
       idTask: 2,
       dateCreation: moment().toISOString(),

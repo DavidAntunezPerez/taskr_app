@@ -32,9 +32,10 @@ export class AssignlistComponent implements OnInit {
   }
 
   getPerson():People{
-    var idPerson = this.assignment.idTask;
-    if(idPerson)
-      return this.peopleSvc.getPersonsById(idPerson);
+    console.log(new Date().toISOString());
+    var personId = this.assignment.idPerson;
+    if(personId)
+      return this.peopleSvc.getPersonsById(personId);
     return undefined;
   }
 
