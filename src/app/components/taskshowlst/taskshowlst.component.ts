@@ -4,7 +4,7 @@ import { IonAccordionGroup } from '@ionic/angular';
 import { Task } from '../../models';
 import { TasksService } from '../../services';
 
-export const USER_PROFILE_VALUE_ACCESSOR: any = {
+export const TASK_PROFILE_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => TaskshowlstComponent),
   multi: true
@@ -14,6 +14,7 @@ export const USER_PROFILE_VALUE_ACCESSOR: any = {
   selector: 'app-taskshowlst',
   templateUrl: './taskshowlst.component.html',
   styleUrls: ['./taskshowlst.component.scss'],
+  providers:[TASK_PROFILE_VALUE_ACCESSOR]
 })
 export class TaskshowlstComponent implements OnInit , ControlValueAccessor {
 
