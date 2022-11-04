@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { People } from '../models/people.model';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class PeopleService {
-  person: People[] = [
+  private person: People[] = [
     {
       id: 0,
       name: 'Paquito',
@@ -34,6 +35,10 @@ export class PeopleService {
       phone: '622119833',
     },
   ];
+
+  private peopleSubject:BehaviorSubject<People[]> = new BehaviorSubject(this.person);
+  public peopleOsb = this.peopleSubject.asObservable();
+
   id: number = this.person.length + 1;
 
   constructor() {}
@@ -51,11 +56,13 @@ export class PeopleService {
   deletePersonById(id: number) {
     // delete person by ID
     this.person = this.person.filter((ppl) => ppl.id != id);
+    this.peopleSubject.next(this.person);
   }
 
   addPerson(ppl: People) {
     ppl.id = this.id++;
     this.person.push(ppl);
+    this.peopleSubject.next(this.person);
   }
 
   updatePerson(ppl: People) {
@@ -66,6 +73,7 @@ export class PeopleService {
       peopl.sex = ppl.sex;
       peopl.phone = ppl.phone;
       peopl.picture = ppl.picture;
+      this.peopleSubject.next(this.person);
     }
   }
 }
