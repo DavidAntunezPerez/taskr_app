@@ -10,6 +10,7 @@
   
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <app-peopleshowlst formControlName="idPerson"></app-peopleshowlst>
+    <app-taskshowlst formControlName="idTask"></app-taskshowlst>
     <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
     <ion-modal [keepContentsMounted]="true">

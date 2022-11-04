@@ -1,3 +1,25 @@
-<p>
-  taskshowlst works!
-</p>
+<ion-accordion-group [multiple]="true" #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="selectedTask!=null">
+        <ion-avatar class="task">
+          <img *ngIf="!selectedTask?.picture" alt="Task default img" src="../../../assets/images/check-512.png" />
+          <img *ngIf="selectedTask?.picture" alt="Task custom img" [src]="selectedTask?.picture" />
+        </ion-avatar>
+        <ion-label>{{selectedTask?.name}} : {{selectedTask?.description}}</ion-label>
+      </ng-container>
+      <ion-label *ngIf="!selectedTask">Select a task</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let task of getTasks()" button detail  (click)="onTaskClicked(task, accordion)">
+          <ion-avatar class="person">
+            <img *ngIf="!task.picture" alt="Task default picture" src="../../../assets/images/check-512.png" />
+            <img *ngIf="task.picture" alt="Task custom picture" [src]="task.picture" />
+          </ion-avatar>
+          <ion-label>{{task.name}} : {{task.description}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
