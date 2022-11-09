@@ -13,8 +13,9 @@ import { TaskdetailComponent } from './components/taskdetail/taskdetail.componen
 import { AssigndetailComponent } from './components/assigndetail/assigndetail.component';
 import { PeopleshowlstComponent } from './components/peopleshowlst/peopleshowlst.component';
 import { TaskshowlstComponent } from './components/taskshowlst/taskshowlst.component';
+import { DateshowlstComponent } from './components/dateshowlst/dateshowlst.component'
 @NgModule({
-  declarations: [AppComponent,PeopledetailComponent,TaskdetailComponent, AssigndetailComponent,PeopleshowlstComponent,TaskshowlstComponent],
+  declarations: [AppComponent,PeopledetailComponent,TaskdetailComponent, AssigndetailComponent,PeopleshowlstComponent,TaskshowlstComponent, DateshowlstComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule,FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

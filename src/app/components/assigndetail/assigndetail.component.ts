@@ -51,4 +51,8 @@ export class AssigndetailComponent implements OnInit {
   onChangeDateTime(dateTime){
     this.form.controls.dateTime.setValue(dateTime);
   }
+
+  onDateTime(){
+    
+  }
 }

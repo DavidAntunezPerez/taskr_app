@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../models/tasks.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,10 @@ export class TasksService {
         'https://cdn2.iconfinder.com/data/icons/work-office-companies-5/24/task-list-edit-512.png',
     },
   ];
+
+  private tasksSubject:BehaviorSubject<Task[]> = new BehaviorSubject(this.task);
+  public task_ = this.tasksSubject.asObservable();
+
   id: number = this.task.length + 1;
 
   constructor() {}
@@ -41,11 +46,13 @@ export class TasksService {
   deleteTaskById(id: number) {
     // delete task by ID
     this.task = this.task.filter((t) => t.id != id);
+    this.tasksSubject.next(this.task);
   }
 
   addTask(t: Task) {
     t.id = this.id++;
     this.task.push(t);
+    this.tasksSubject.next(this.task);
   }
 
   updateTask(t: Task) {
@@ -55,5 +62,6 @@ export class TasksService {
       tsk.description = t.description;
       tsk.picture = t.picture;
     }
+    this.tasksSubject.next(this.task);
   }
 }
