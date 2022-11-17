@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      TaskrApp
+      Taskr App
     </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
@@ -10,11 +10,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-  </ion-header>
-
-  <div id="container">
-    
-  </div>
   
+    <ion-content>
+      <ion-card>
+        <ion-card-content>
+          <p translate [translateParams]="{ language: language }">home.title</p>
+          <p translate [translateParams]="{ language: language }">home.invite</p>
+          <ion-item>
+            <ion-label translate>Language</ion-label>
+            <ion-select [(ngModel)]='language' (ionChange)='languageChange()'
+              [placeholder]='"home.languageChangePlaceholder" | translate'>
+              <ion-select-option value='en'>English</ion-select-option>
+              <ion-select-option value='es'>Spanish</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+
 </ion-content>

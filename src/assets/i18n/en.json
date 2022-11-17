@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Task Management",
+    "tabName": "Home page goes here",
+    "invite": "Select your language:",
+    "languageChangePlaceholder": "Change language"
+  },
+  "Language": "Language"
+}

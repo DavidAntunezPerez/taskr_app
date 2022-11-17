@@ -13,10 +13,37 @@ import { TaskdetailComponent } from './components/taskdetail/taskdetail.componen
 import { AssigndetailComponent } from './components/assigndetail/assigndetail.component';
 import { PeopleshowlstComponent } from './components/peopleshowlst/peopleshowlst.component';
 import { TaskshowlstComponent } from './components/taskshowlst/taskshowlst.component';
-import { DateshowlstComponent } from './components/dateshowlst/dateshowlst.component'
+import { DateshowlstComponent } from './components/dateshowlst/dateshowlst.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from './utils/translate';
+
 @NgModule({
-  declarations: [AppComponent,PeopledetailComponent,TaskdetailComponent, AssigndetailComponent,PeopleshowlstComponent,TaskshowlstComponent, DateshowlstComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule,FormsModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    PeopledetailComponent,
+    TaskdetailComponent,
+    AssigndetailComponent,
+    PeopleshowlstComponent,
+    TaskshowlstComponent,
+    DateshowlstComponent,
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
