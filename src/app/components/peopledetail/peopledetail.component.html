@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Personal Data</ion-title>
+    <ion-title><p translate [translateParams]="{ language: language }">people.title</p></ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss()"><ion-icon name="close-outline"></ion-icon></ion-button>
     </ion-buttons>
@@ -9,34 +9,34 @@
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
-      <ion-label position="floating">
-        Name
+      <ion-label position="floating" translate [translateParams]="{ language: language }">
+        people.name
       </ion-label>
-      <ion-input type="text" placeholder="Introduce your name" formControlName="name"></ion-input>
+      <ion-input type="text" [placeholder]='"people.iname" | translate' formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Surname
+      <ion-label position="floating" translate [translateParams]="{ language: language }">
+        people.surname
       </ion-label>
-      <ion-input type="text" placeholder="Introduce your surname" formControlName="surname"></ion-input>
+      <ion-input type="text"  [placeholder]='"people.isurname" | translate' formControlName="surname"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Sex
+      <ion-label position="floating" translate [translateParams]="{ language: language }">
+        people.sex
       </ion-label>
-      <ion-input type="text" placeholder="Introduce your sex (optional)" formControlName="sex"></ion-input>
+      <ion-input type="text"  [placeholder]='"people.isex" | translate' formControlName="sex"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Phone
+      <ion-label position="floating" translate [translateParams]="{ language: language }">
+        people.phone
       </ion-label>
-      <ion-input type="text" placeholder="Introduce your phone number (optional)" formControlName="phone"></ion-input>
+      <ion-input type="text" [placeholder]='"people.iphone" | translate' formControlName="phone"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Picture
+      <ion-label position="floating" translate [translateParams]="{ language: language }">
+        people.picture
       </ion-label>
-      <ion-input type="text" placeholder="Introduce your profile picture URL (optional)" formControlName="picture"></ion-input>
+      <ion-input type="text"  [placeholder]='"people.ipicture" | translate' formControlName="picture"></ion-input>
     </ion-item>
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modify":"Add"}}</ion-button>
   </form>

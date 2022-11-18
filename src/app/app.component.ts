@@ -15,7 +15,7 @@ export class AppComponent {
     { title: 'Manage', url: '/tasks', icon: 'create' },
   ];
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('es');
+    this.translate.setDefaultLang('en');
   }
   // onLanguage() {
   //   this.language = (this.language + 1) % 2;

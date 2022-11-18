@@ -3,5 +3,26 @@
     "title": "Task Management Application",
     "invite": "Select your language:",
     "languageChangePlaceholder": "Change language"
+  },
+  "menu":{
+    "title":"Menu",
+    "home":"Home",
+    "people":"People",
+    "view": "View",
+    "assign":"Assign",
+    "manage": "Manage"
+  },
+  "people":{
+    "title": "Personal Data",
+    "name":"Name",
+    "surname":"Surname",
+    "sex":"Sex",
+    "phone":"Phone",
+    "picture": "Picture",
+    "iname":"Introduce your name",
+    "isurname":"Introduce your surname",
+    "isex":"Introduce your sex (optional)",
+    "iphone":"Introduce your phone (optional)",
+    "ipicture":"Introduce your profile picture URL (optional)"
   }
 }

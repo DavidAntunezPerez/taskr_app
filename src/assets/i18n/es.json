@@ -4,6 +4,26 @@
     "tabName": "Aqui va la página principal",
     "invite": "Selecciona tu idioma:",
     "languageChangePlaceholder": "Cambiar idioma"
-
+  },
+  "menu":{
+    "title":"Menú",
+    "home":"Inicio",
+    "people":"Personas",
+    "view": "Ver",
+    "assign":"Asignar",
+    "manage": "Gestionar"
+  },
+  "people":{
+    "title": "Datos Personales",
+    "name":"Nombre",
+    "surname":"Apellidos",
+    "sex":"Sexo",
+    "phone":"Teléfono",
+    "picture": "Foto",
+    "iname":"Introduce tu nombre",
+    "isurname":"Introduce tus apellidos",
+    "isex":"Introduce tu sexo (opcional)",
+    "iphone":"Introduce tu teléfono (opcional)",
+    "ipicture":"Introduce la URL de tu foto de perfil (opcional)"
   }
 }
