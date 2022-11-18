@@ -1,9 +1,7 @@
 {
   "home": {
-    "title": "Task Management",
-    "tabName": "Home page goes here",
+    "title": "Task Management Application",
     "invite": "Select your language:",
     "languageChangePlaceholder": "Change language"
-  },
-  "Language": "Language"
+  }
 }

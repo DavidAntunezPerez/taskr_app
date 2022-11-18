@@ -17,7 +17,6 @@
           <p translate [translateParams]="{ language: language }">home.title</p>
           <p translate [translateParams]="{ language: language }">home.invite</p>
           <ion-item>
-            <ion-label translate>Language</ion-label>
             <ion-select [(ngModel)]='language' (ionChange)='languageChange()'
               [placeholder]='"home.languageChangePlaceholder" | translate'>
               <ion-select-option value='en'>English</ion-select-option>

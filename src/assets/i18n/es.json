@@ -1,9 +1,9 @@
 {
   "home": {
-    "title": "Gestor de tareas",
+    "title": "Aplicación de gestor de tareas",
     "tabName": "Aqui va la página principal",
     "invite": "Selecciona tu idioma:",
     "languageChangePlaceholder": "Cambiar idioma"
-  },
-  "Language": "Idioma"
+
+  }
 }

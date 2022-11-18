@@ -8,10 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePage {
   language: string = this.translateService.currentLang;
-  constructor(private translateService: TranslateService) {}
+  constructor(private translateService: TranslateService) {
+  }
   languageChange() {
     this.translateService.use(this.language);
   }
-
-  // PERFORMING TRANSLATIONS IN CLASSES : https://phrase.com/blog/posts/localizing-ionic-applications-with-ngx-translate/
 }
