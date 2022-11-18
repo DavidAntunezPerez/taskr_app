@@ -8,11 +8,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'People', url: '/people', icon: 'people' },
-    { title: 'View', url: '/viewtasks', icon: 'eye' },
-    { title: 'Assign', url: '/assigntasks', icon: 'checkbox' },
-    { title: 'Manage', url: '/tasks', icon: 'create' },
+    { title: 'menu.home', url: '/home', icon: 'home' },
+    { title: 'menu.people', url: '/people', icon: 'people' },
+    { title: 'menu.view', url: '/viewtasks', icon: 'eye' },
+    { title: 'menu.assign', url: '/assigntasks', icon: 'checkbox' },
+    { title: 'menu.manage', url: '/tasks', icon: 'create' },
   ];
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('en');

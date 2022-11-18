@@ -4,6 +4,7 @@ import { PeopleService } from 'src/app/services/people.service';
 import { ModalController, AlertController } from '@ionic/angular';
 import { PeopledetailComponent } from 'src/app/components/peopledetail/peopledetail.component';
 import { AssignService } from '../../services/assignservice.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-people',
@@ -15,8 +16,15 @@ export class PeoplePage implements OnInit {
     private personinfo: PeopleService,
     private modal: ModalController,
     private alert: AlertController,
-    private assgnSvc:AssignService
+    private assgnSvc:AssignService,
+    private translateService: TranslateService
   ) {}
+  
+  // TRANSLATE
+  language: string = this.translateService.currentLang;
+  languageChange() {
+    this.translateService.use(this.language);
+  }
 
   ngOnInit() {}
 

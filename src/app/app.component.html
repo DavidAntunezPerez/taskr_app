@@ -10,7 +10,7 @@
         <ion-menu-toggle auto-hide="false" *ngFor="let m of appPages; let i = index">
           <ion-item routerDirection="root" [routerLink]="[m.url]" lines="none" detail="false" routerLinkActive="selected">
             <ion-icon slot="start" [ios]="m.icon + '-outline'" [md]="m.icon + '-sharp'"></ion-icon>
-            <ion-label>{{ m.title }}</ion-label>
+            <ion-label> {{ m.title | translate }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>

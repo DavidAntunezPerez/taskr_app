@@ -13,6 +13,7 @@
     "manage": "Manage"
   },
   "people":{
+    "mtitle":"People",
     "title": "Personal Data",
     "name":"Name",
     "surname":"Surname",
@@ -23,6 +24,9 @@
     "isurname":"Introduce your surname",
     "isex":"Introduce your sex (optional)",
     "iphone":"Introduce your phone (optional)",
-    "ipicture":"Introduce your profile picture URL (optional)"
+    "ipicture":"Introduce your profile picture URL (optional)",
+    "modify" : "Modify",
+    "edit" : "Edit",
+    "add" : "Add"
   }
 }
