@@ -49,5 +49,8 @@
     "add" : "Add",
     "time" : "Time",
     "date" : "Select a date and a time:"
+  },
+  "view" : {
+    "mtitle" : "View Tasks"
   }
 }

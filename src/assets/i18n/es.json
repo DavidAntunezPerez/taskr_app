@@ -53,6 +53,9 @@
     "add" : "Agregar",
     "time" : "Hora",
     "date" : "Selecciona fecha y hora:"
+  },
+  "view" : {
+    "mtitle" : "Ver tareas"
   }
 
 }
