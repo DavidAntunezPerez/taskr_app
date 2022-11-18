@@ -29,5 +29,15 @@
     "modify" : "Modificar",
     "edit" : "Editar",
     "add" : "Agregar"
+  },
+  "task":{
+    "mtitle":"Tareas",
+    "title":"Datos de la tarea",
+    "name":"Nombre",
+    "description":"Descripción",
+    "picture":"Foto",
+    "iname": "Introduce el nombre de la tarea",
+    "idescription":"Introduce la descripción de la tarea (opcional)",
+    "ipicture":"Introduce la URL de la foto de la tarea (opcional)"
   }
 }

@@ -28,5 +28,15 @@
     "modify" : "Modify",
     "edit" : "Edit",
     "add" : "Add"
+  },
+  "task":{
+    "mtitle":"Tasks",
+    "title":"Task Data",
+    "name":"Name",
+    "description":"Description",
+    "picture":"Picture",
+    "iname": "Introduce the task name",
+    "idescription":"Introduce the task description (optional)",
+    "ipicture":"Introduce the task picture URL (optional)"
   }
 }

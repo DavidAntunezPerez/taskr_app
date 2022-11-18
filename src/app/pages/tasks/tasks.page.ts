@@ -4,6 +4,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 import { ModalController, AlertController } from '@ionic/angular';
 import { TaskdetailComponent } from 'src/app/components/taskdetail/taskdetail.component';
 import { AssignService } from '../../services/assignservice.service';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.page.html',
@@ -14,8 +15,15 @@ export class TasksPage implements OnInit {
     private taskinfo: TasksService,
     private modal: ModalController,
     private alert: AlertController,
-    private assgnSvc:AssignService
+    private assgnSvc:AssignService,
+    private translateService: TranslateService
   ) {}
+
+  // TRANSLATE
+  language: string = this.translateService.currentLang;
+  languageChange() {
+    this.translateService.use(this.language);
+  }
 
   ngOnInit() {}
 

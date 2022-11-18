@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Task Data</ion-title>
+    <ion-title><p translate [translateParams]="{ language: language }">task.title</p></ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss()">
         <ion-icon name="close-outline"></ion-icon>
@@ -12,22 +12,22 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
       <ion-label position="floating">
-        Name
+        <p translate [translateParams]="{ language: language }">task.name</p>
       </ion-label>
-      <ion-input type="text" placeholder="Introduce the task name" formControlName="name"></ion-input>
+      <ion-input type="text" [placeholder]='"task.iname" | translate' formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Description
+        <p translate [translateParams]="{ language: language }">task.description</p>
       </ion-label>
-      <ion-input type="text" placeholder="Introduce a short description (optional)" formControlName="description">
+      <ion-input type="text"[placeholder]='"people.idescription" | translate' formControlName="description">
       </ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Picture
+        <p translate [translateParams]="{ language: language }">task.picture</p>
       </ion-label>
-      <ion-input type="text" placeholder="Introduce the task picture URL (optional)" formControlName="picture">
+      <ion-input type="text" [placeholder]='"people.ipicture" | translate' formControlName="picture">
       </ion-input>
     </ion-item>
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modify":"Add"}}</ion-button>

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Task } from '../../models/tasks.model';
 import { ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-taskdetail',
   templateUrl: './taskdetail.component.html',
@@ -21,7 +22,7 @@ export class TaskdetailComponent implements OnInit {
     }
   }
 
-  constructor(private formBld: FormBuilder, private modal: ModalController) {
+  constructor(private formBld: FormBuilder, private modal: ModalController, private translateService: TranslateService) {
     this.form = this.formBld.group({
       id: [null],
       name: ['', [Validators.required]],
@@ -39,5 +40,9 @@ export class TaskdetailComponent implements OnInit {
   // DISMISS FORM FUNCTION
   onDismiss() {
     this.modal.dismiss(null, 'cancel');
+  }
+  language: string = this.translateService.currentLang;
+  languageChange() {
+    this.translateService.use(this.language);
   }
 }
