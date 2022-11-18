@@ -38,6 +38,21 @@
     "picture":"Foto",
     "iname": "Introduce el nombre de la tarea",
     "idescription":"Introduce la descripción de la tarea (opcional)",
-    "ipicture":"Introduce la URL de la foto de la tarea (opcional)"
+    "ipicture":"Introduce la URL de la foto de la tarea (opcional)",
+    "modify" : "Modificar",
+    "edit" : "Editar",
+    "add" : "Agregar"
+  },
+  "assigntasks":{
+    "mtitle":"Asignar Tareas",
+    "title": "Datos de la asignación",
+    "done" : "Hecho",
+    "cancel" : "Cancelar",
+    "modify" : "Modificar",
+    "edit" : "Editar",
+    "add" : "Agregar",
+    "time" : "Hora",
+    "date" : "Selecciona fecha y hora:"
   }
+
 }

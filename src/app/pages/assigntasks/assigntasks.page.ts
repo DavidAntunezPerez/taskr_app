@@ -3,6 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { Assignment } from '../../models/assign.model';
 import { AssignService } from '../../services/assignservice.service';
 import { AssigndetailComponent } from '../../components/assigndetail/assigndetail.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-assigntasks',
@@ -11,10 +12,16 @@ import { AssigndetailComponent } from '../../components/assigndetail/assigndetai
 })
 export class AssigntasksPage implements OnInit {
   constructor(
+    private translateService: TranslateService,
     private assgnSvc: AssignService,
     private modal: ModalController,
     private alert: AlertController
   ) {}
+
+  language: string = this.translateService.currentLang;
+  languageChange() {
+    this.translateService.use(this.language);
+  }
 
   ngOnInit() {}
 

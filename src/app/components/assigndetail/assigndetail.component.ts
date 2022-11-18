@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { Assignment } from '../../models/assign.model';
 
 @Component({
@@ -26,7 +27,8 @@ export class AssigndetailComponent implements OnInit {
   
   constructor(
     private fb:FormBuilder,
-    private modal:ModalController
+    private modal:ModalController,
+    private translateService: TranslateService
   ) { 
     this.form = this.fb.group({
       id:[null],
@@ -34,6 +36,12 @@ export class AssigndetailComponent implements OnInit {
       idPerson:[-1, [Validators.min(0)]],
       dateTime:['', [Validators.required]],
     });
+  }
+  
+  // TRANSLATE
+  language: string = this.translateService.currentLang;
+  languageChange() {
+    this.translateService.use(this.language);
   }
 
   ngOnInit() {

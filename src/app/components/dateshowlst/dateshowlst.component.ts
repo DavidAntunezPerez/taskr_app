@@ -1,6 +1,7 @@
 import { Component, forwardRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { BehaviorSubject } from 'rxjs';
 
@@ -19,6 +20,13 @@ export const DATETIME_PROFILE_VALUE_ACCESSOR: any = {
 export class DateshowlstComponent
   implements OnInit, ControlValueAccessor, OnDestroy
 {
+  constructor(private translateService: TranslateService){}
+  
+  // TRANSLATE
+  language: string = this.translateService.currentLang;
+  languageChange() {
+    this.translateService.use(this.language);
+  }
   value = false;
 
   ngOnDestroy(): void {

@@ -4,13 +4,13 @@
       <ng-container *ngIf="value">
         <ion-label>{{(date$ | async) | date:'short'}}</ion-label>
       </ng-container>
-      <ion-label *ngIf="!value">Select a date and a time</ion-label>
+      <ion-label *ngIf="!value"><p translate [translateParams]="{ language: language }">assigntasks.date</p></ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-datetime #datetime value="{{(date$ | async)}}" (ionChange)="onDateTimeChanged($event, accordion)">
         <ion-buttons slot="buttons">
-          <ion-button color="danger" (click)="onCancel(datetime, accordion)">Cancel</ion-button>
-          <ion-button color="primary" (click)="onConfirm(datetime, accordion)">Done</ion-button>
+          <ion-button color="danger" (click)="onCancel(datetime, accordion)"><p translate [translateParams]="{ language: language }">assigntasks.cancel</p></ion-button>
+          <ion-button color="primary" (click)="onConfirm(datetime, accordion)"><p translate [translateParams]="{ language: language }">assigntasks.done</p></ion-button>
         </ion-buttons>
       </ion-datetime>
     </div>

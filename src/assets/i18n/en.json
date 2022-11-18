@@ -38,5 +38,16 @@
     "iname": "Introduce the task name",
     "idescription":"Introduce the task description (optional)",
     "ipicture":"Introduce the task picture URL (optional)"
+  },
+  "assigntasks":{
+    "mtitle":"Assign Tasks",
+    "title": "Assignment data",
+    "done" : "Done",
+    "cancel" : "Cancel",
+    "modify" : "Modify",
+    "edit" : "Edit",
+    "add" : "Add",
+    "time" : "Time",
+    "date" : "Select a date and a time:"
   }
 }

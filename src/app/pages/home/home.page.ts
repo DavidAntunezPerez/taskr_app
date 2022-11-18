@@ -7,9 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  language: string = this.translateService.currentLang;
   constructor(private translateService: TranslateService) {
   }
+  language: string = this.translateService.currentLang;
   languageChange() {
     this.translateService.use(this.language);
   }
