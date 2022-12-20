@@ -29,6 +29,7 @@ export class PeopleshowlstComponent implements OnInit, ControlValueAccessor {
 
   writeValue(obj: any): void {
     this.selectedPerson = this.pplSvc.getPersonsById(obj);
+    console.log(obj)
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;

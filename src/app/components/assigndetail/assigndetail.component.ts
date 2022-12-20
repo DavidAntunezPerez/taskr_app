@@ -15,6 +15,7 @@ export class AssigndetailComponent implements OnInit {
   mode:"New" | "Edit" = "New";
   @Input('assignment') set assignment(assignment:Assignment){
     if(assignment){
+      console.log(assignment);
       this.form.controls.id.setValue(assignment.id);
       this.form.controls.idTask.setValue(assignment.idTask);
       this.form.controls.idPerson.setValue(assignment.idPerson);

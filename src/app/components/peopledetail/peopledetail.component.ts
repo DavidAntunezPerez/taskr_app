@@ -25,9 +25,13 @@ export class PeopledetailComponent implements OnInit {
     }
   }
 
-  constructor(private formBld: FormBuilder, private modal: ModalController, private translateService: TranslateService) {
+  constructor(
+    private formBld: FormBuilder,
+    private modal: ModalController,
+    private translateService: TranslateService
+  ) {
     this.form = this.formBld.group({
-      id:[null],
+      id: [null],
       name: ['', [Validators.required]],
       surname: ['', [Validators.required]],
       sex: [''],
@@ -46,6 +50,7 @@ export class PeopledetailComponent implements OnInit {
   onDismiss() {
     this.modal.dismiss(null, 'cancel');
   }
+  // TRANSLATE
   language: string = this.translateService.currentLang;
   languageChange() {
     this.translateService.use(this.language);
